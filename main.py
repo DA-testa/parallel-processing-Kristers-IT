@@ -12,21 +12,20 @@ def parallel_processing(n, m, data):
     
     n = n - 1
     indekss  = 0
-    data_lielums = len(data)
-    while data_lielums > 0:
+    while m > 0:
         
         for elementi in range(m):
-            
+
             output[elementi] = (indekss, laiks[indekss])
             laiks[indekss] = laiks[indekss] + data[elementi]
-            data_lielums = data_lielums - 1
+            m = m - 1
 
             if indekss < n:
                 indekss = indekss + 1
             else:
                 indekss = 0
                 
-            if len(data) == 0:
+            if m == 0:
                 break
 
     return output
